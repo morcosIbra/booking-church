@@ -5,6 +5,8 @@ import Title from '../../Components/Title';
 
 const UnderConstruction = ({ title, subTitle, infoTitle, info }) => (
     <div>
+        {/* <img src="/public/st-george.jpg" class="rounded mx-auto d-block" alt="..." /> */}
+
         <Title title={title} classes='mb-3 mt-3 text-center'
             subTitle={subTitle} />
         <InfoBar title={infoTitle} type="info" items={info} classes='mb-3' />
