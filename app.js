@@ -21,9 +21,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+app.get('/api/passwords', (req, res) => {
+  const count = 5;
 
+  // Generate some passwords
+
+
+  // Return them as json
+  res.json(count);
+
+  console.log(`Sent ${count} passwords`);
+});
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 // catch 404 and forward to error handler

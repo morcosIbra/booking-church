@@ -3,10 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "cd client && yarn start && nodemon ./bin/www",
-    "dev": "cd client && yarn start && nodemon ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "yarn start --prefix client",
+    "server": "nodemon ./bin/www",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "heroku-postbuild": "cd client && yarn && yarn run build",
+    "start": "node ./bin/www"
   },
   "dependencies": {
+    "concurrently": "^5.2.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
