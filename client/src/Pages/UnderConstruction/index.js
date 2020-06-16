@@ -2,13 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import InfoBar from '../../Components/InfoBar';
 import Title from '../../Components/Title';
+import george from '../../images/st-george.jpg';
 
 const UnderConstruction = ({ title, subTitle, infoTitle, info }) => (
     <div>
-        {/* <img src="/public/st-george.jpg" class="rounded mx-auto d-block" alt="..." /> */}
 
         <Title title={title} classes='mb-3 mt-3 text-center'
             subTitle={subTitle} />
+        <img src={george} className="rounded mx-auto d-block mb-3" alt="..." />
+
         <InfoBar title={infoTitle} type="info" items={info} classes='mb-3' />
 
     </div>
