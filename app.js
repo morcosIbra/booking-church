@@ -33,7 +33,8 @@ app.get('/api/passwords', (req, res) => {
   console.log(`Sent ${count} passwords`);
 });
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  //  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.send('success booking church')
 });
 
 // catch 404 and forward to error handler
