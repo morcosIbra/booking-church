@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/api/passwords', (req, res) => {
-  const count = 5;
+  const count = 6;
 
   // Generate some passwords
 
