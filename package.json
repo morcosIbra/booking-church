@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "yarn start --prefix client",
-    "server": "nodemon ./bin/www",
+    "client": "cd client && yarn start",
+    "server": "nodemon --exec babel-node ./src/build/www",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "cd client && yarn && yarn run build",
     "start": "node ./bin/www"
