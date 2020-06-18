@@ -8,7 +8,7 @@
     "server": "nodemon --exec babel-node ./src/build/www",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "cd client && yarn && yarn run build",
-    "start": " node -r babel-polyfill -r babel-core/register ./bin "
+    "start": " node ./bin "
   },
   "dependencies": {
     "concurrently": "^5.2.0",
