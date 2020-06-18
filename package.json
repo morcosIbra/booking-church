@@ -8,9 +8,14 @@
     "server": "nodemon --exec babel-node ./src/build/www",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "cd client && yarn && yarn run build",
-    "start": "node ./bin"
+    "start": " node -r babel-polyfill -r babel-core/register ./bin "
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "concurrently": "^5.2.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
