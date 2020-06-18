@@ -1,5 +1,5 @@
 var createError = require('http-errors');
-var express = require('express');
+import express from 'express';
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -9,31 +9,29 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, '/../client/build')));
 
 
-app.get('/api/passwords', (req, res) => {
-  const count = 6;
-
+app.get('/api/passwords', async (req, res) => {
+  const count = await 6;
+  const temp = { count }
   // Generate some passwords
 
 
   // Return them as json
-  res.json(count);
+  res.json(temp.count);
 
   console.log(`Sent ${count} passwords`);
 });
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '/../client/build', 'index.html'));
   // res.send('success booking church')
 });
 
